@@ -32,7 +32,7 @@ plotAudInput = T;   % Plot Jeffress input (before weighting)
 doFranosch   = T;
 doControl    = T;
 doUnsup      = F;
-doInhibit    = T;
+doInhibit    = inhibition;   % Lateral inhibition - defined in configuration
 
 if runSim
     if continueSim

@@ -21,7 +21,7 @@ neuronType= 'r';                    % type 'r' for rate-based model and 's' for 
 t         = (init_time:dt:(fin_time-dt))';
 linear_loc= false;                  % make location linearly increase for testing
 out_dt    = 1e0;                    % time resolution of debug output
-inhibition = false;                % lateral inhibition of reconstruction neurons
+inhibition = false;                 % lateral inhibition of reconstruction neurons
 
 % Jeffress, supervisor and reconstruction neurons config
 NA = 20;                         % # of auditory nuerons
