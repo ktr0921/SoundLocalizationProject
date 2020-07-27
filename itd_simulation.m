@@ -19,6 +19,9 @@
 
 % close all;
 clear
+clc
+
+configuration; % Configuration
 % Run Simulation: True or False
 T = true; F = false;
 continueSim  = F;   % allows you to continue a simulation from where you left off
@@ -30,7 +33,7 @@ plotJeffLIF  = F;   % Plot jeffress LIF neuron potential
 plotAudInput = T;   % Plot Jeffress input (before weighting)
 
 doFranosch   = T;
-doControl    = T;
+doControl    = F;
 doUnsup      = F;
 doInhibit    = inhibition;   % Lateral inhibition - defined in configuration
 
@@ -296,7 +299,7 @@ if plotWeights % format of weights, J, is [time, NA, NR)
         set(f2i,'name','Inhibition weights');
     end
 end
-
+%%
 if plotAudInput
     if doFranosch, ff = figure; end
     if doControl,  fc = figure; end

@@ -31,7 +31,7 @@ function [potential, window] = epsp(varargin)
     T_      = 10;
     kernel_ = 'exp';
     params_ = [];
-    doplot_ = true;
+    doplot_ = false;
     
     Tr_     = []; % 1e-2;
     Td_     = 1e-2;
