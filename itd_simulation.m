@@ -17,6 +17,8 @@
 % - try different controllers
 % - parameter analysis, such as Q, R
 
+
+
 % close all;
 clear
 clc
@@ -36,6 +38,8 @@ doFranosch   = T;
 doControl    = F;
 doUnsup      = F;
 doInhibit    = inhibition;   % Lateral inhibition - defined in configuration
+
+v_cell = {};
 
 if runSim
     if continueSim
@@ -348,6 +352,16 @@ if plotJeffLIF
     end
     set(flif,'name','V_LIF');
 end
+
+%%
+output_recon2 = output_recon(1:50:4999,1:20);
+imagesc(output_recon2'); axis image; colorbar;
+
+
+
+
+
+
 
 
 
