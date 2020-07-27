@@ -31,10 +31,8 @@ plotAudInput = T;   % Plot Jeffress input (before weighting)
 
 inhibition = false;
 
-mat_Output = [];
-
 doFranosch   = T;
-doControl    = F;
+doControl    = T;
 doUnsup      = F;
 doInhibit    = inhibition;   % Lateral inhibition - defined in configuration
 if runSim
@@ -164,9 +162,6 @@ if runSim
             control_non = controller(tstep, control_non, 'non', recon_non, jeff_non, Alpha, dt, OUT);
             jeff_non    = update_weight(tstep,jeff_non,'sup','stdp_var',source, control_non, dt, Alpha, OUT);
             output_recon(tstep,:) = recon_non.V;
-            
-            mat_Output = [mat_Output; control_non.u];
-            
             output_A_non(tstep,:) = jeff_non.V_A;   % auditory input into the recon neurons
             angle_A_non{tstep}    = getAuditoryAngle(jeff_non,recon_non,Nsource); % auditory angle est
             output_V(tstep,:)= visual.V_V; % visual input into the recon neurons
@@ -353,17 +348,6 @@ if plotJeffLIF
     end
     set(flif,'name','V_LIF');
 end
-
-%%
-
-
-% mat_Output2
-mat_Output2 = mat_Output(1:100:end, 1:end);
-heatmap(mat_Output2);
-
-
-
-
 
 
 
