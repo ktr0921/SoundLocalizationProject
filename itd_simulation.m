@@ -353,7 +353,6 @@ if plotJeffLIF
     set(flif,'name','V_LIF');
 end
 
-%%
 output_recon2 = output_recon(1:50:4999,1:20);
 imagesc(output_recon2'); axis image; colorbar;
 
