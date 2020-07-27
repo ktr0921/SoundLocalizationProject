@@ -102,6 +102,8 @@ function control = controller(tstep, control, control_type, recon, supervisor, j
    end
    
    control.u  = u * 1e5;
+   
+   % control.u = u;
 %    if DEBUG
 %        
 %       control.DEBUG.u(DEBUG,:) = u;
