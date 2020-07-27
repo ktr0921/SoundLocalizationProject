@@ -2,7 +2,7 @@ function [NextObs, Reward, IsDone, LoggedSignals] = ddpg_Step_Func(Action, Logge
 
 configuration;
 u_DDPG = struct();
-u_DDPG.u = Action';
+u_DDPG.u = Action' * 1e5;
 
 jeff       = LoggedSignals.jeff;
 rec_Neuron = LoggedSignals.rec_Neuron;
@@ -57,7 +57,7 @@ LoggedSignals.r = r - sum(abs(rec_Neuron.V));
 
 % LoggedSignals = [ddpg_Jeff(jeff, 'struct2mat'); rec_Neuron; source; visual; location; index];
 NextObs = rec_Neuron.V';
-IsDone = r < -30;
+IsDone = r < -100;
 
 % IsDone is false, get reward
 if ~IsDone
